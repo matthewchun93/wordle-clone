@@ -12,7 +12,10 @@ const Letter = ({ letterPosition, attemptValue }) => {
   const letter = board[attemptValue][letterPosition];
 
   const correct = correctWord.toUpperCase()[letterPosition] === letter;
-  const almost = !correct && letter !== "" && correctWord.includes(letter);
+  const almost =
+    correct === false &&
+    letter !== "" &&
+    correctWord.includes(letter.toLowerCase());
   const letterState =
     currentAttempt.attempt > attemptValue &&
     (correct ? "correct" : almost ? "almost" : "error");
@@ -21,7 +24,7 @@ const Letter = ({ letterPosition, attemptValue }) => {
     if (letter !== "" && !correct && !almost) {
       setDisabledLetters((prev) => [...prev, letter]);
     }
-  }, [currentAttempt.attempt]);
+  }, [currentAttempt.attempt, almost, letter, correct, setDisabledLetters]);
 
   return (
     <div className="letter" id={letterState}>
