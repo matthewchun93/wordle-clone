@@ -67,7 +67,6 @@ function App() {
     } else {
       alert("word not found");
     }
-
     if (currentWord === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
       return;

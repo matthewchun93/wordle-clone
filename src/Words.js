@@ -1,4 +1,5 @@
 import wordBank from "./wordbank.txt";
+
 export const boardDefault = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
