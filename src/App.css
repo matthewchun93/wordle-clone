@@ -39,7 +39,7 @@ nav h1 {
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
 }
